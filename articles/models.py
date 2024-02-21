@@ -11,3 +11,6 @@ class Article(models.Model):
     
     def __str__(self) : # displays the string representation of fields
         return self.title
+    
+    def snippet(self):
+        return self.body[0:70]+'....' # displays only 50 characters on the article page and .... in the end
