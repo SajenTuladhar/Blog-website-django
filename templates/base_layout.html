@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="{% static 'styles.css'%}">
     </head>
     <body>
-      <div class="wrapper">  
+      <div class="wrapper"> 
+        <h1><a href="{% url 'articles:list'%}"><img src="{%static 'logo.png'%}"/></a></h1> 
         {%block content%}
         {% endblock%}
     </body>
