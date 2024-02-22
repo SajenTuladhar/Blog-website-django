@@ -8,4 +8,6 @@ def article_list(request):
     return render(request,'articles/article_list.html',{'articles':articles}) #django looks in templates and finds article folder 
 
 def article_detail(request,slug):
-    return HttpResponse(slug)
+   # return HttpResponse(slug)
+   article= Article.objects.get(slug=slug)
+   return render(request,'articles/article_detail.html',{'article':article})
