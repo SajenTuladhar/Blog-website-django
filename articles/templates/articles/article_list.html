@@ -1,25 +1,15 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Articles</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'styles.css'%}">
-    </head>
-    <body>
-       <h1>Articles List<h1>
-       <div class="articles">
+ {% extends 'base_layout.html'%}
+    
+ {%block content%}
+     <h1>Articles List<h1>
+     <div class="articles">
        {% for article in articles%}
         <div class"article">
             <h6> <a href="#">{{article.title}}</a><h6>
             <p>{{article.snippet}}</p>
             <p>{{article.date}}</p>
         </div>
-       {%endfor %}
-        </div>
-    </body>
-</html>
+     {%endfor %}
+    </div>
+
+{% endblock %}
