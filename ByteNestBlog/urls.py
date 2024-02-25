@@ -10,6 +10,7 @@ urlpatterns = [
     path('articles/',include('articles.urls')),#includes urls from articles app
     path('about/',views.about),
     path('',views.homepage),
+    path('accounts/',include('accounts.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
