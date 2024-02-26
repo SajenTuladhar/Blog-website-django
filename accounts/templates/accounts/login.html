@@ -4,6 +4,9 @@
      <form class="site-form" action= "/accounts/login/" method="post"> {% comment %} action means where to submit the data gotten from post {% endcomment %}
         {% csrf_token %}
         {{form}} {% comment %} this is the key of the dic we made in views.py {% endcomment %}
+        {%if request.GET.next %}
+            <input type="hidden" name= "next" value = "{{request.GET.next}}">
+        {% endif %}
         <input type ="submit" value ="login">
     </form>
 
