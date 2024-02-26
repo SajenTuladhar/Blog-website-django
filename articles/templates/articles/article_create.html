@@ -3,6 +3,11 @@
 {% block content %}
 <div class ="create-article">
     <h2>Create a new article</h2>
+     <form class="site-form" action ="{%url 'articles:create' %}" method ="post" enctype="multipart/form-data"> {% comment %} we need enctype whenver we upload file {% endcomment %}
+        {% csrf_token %}
+        {{form}}
+        <input type ="submit" value="Create">
+    </form>
 </div>
 
 {%endblock%}
