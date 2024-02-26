@@ -21,7 +21,10 @@ def article_create(request):
       form = forms.CreateArticle(request.POST,request.FILES)  
       if form.is_valid:
           #save article to the database
-        return redirect('articles:list')
+          instance=form.save(commit=False) #commit false means "dont save just yet , let me don something with that value"
+          instance.author= request.user #attches the author thats logged in to the instance
+          instance.save() #commiting the save 
+          return redirect('articles:list')
     else:
         form= forms.CreateArticle()
         return render(request,'articles/article_create.html',{'form':form})

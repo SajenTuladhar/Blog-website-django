@@ -6,7 +6,7 @@
      <form class="site-form" action ="{%url 'articles:create' %}" method ="post" enctype="multipart/form-data"> {% comment %} we need enctype whenver we upload file {% endcomment %}
         {% csrf_token %}
         {{form}}
-        <input type ="submit" value="Create">
+        <input type ="submit" value="create">
     </form>
 </div>
 

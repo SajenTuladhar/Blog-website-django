@@ -1,8 +1,9 @@
 body{
-    background-color: #0f121f;
+    background-color: black;
     background-image: url(stars.png); /*the pic is in the same dir so only placed name */
-    background-repeat: no repeat;
-    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    color: white;
 
 }
 
